@@ -1,4 +1,4 @@
-package com.rubenvj.sevillafc.features.employee.domain.trainer.domain;
+package com.rubenvj.sevillafc.features.employee.domain;
 
 import com.rubenvj.sevillafc.features.employee.domain.Employee;
 
