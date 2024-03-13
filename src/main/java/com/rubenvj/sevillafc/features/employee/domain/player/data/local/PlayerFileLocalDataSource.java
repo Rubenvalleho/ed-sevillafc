@@ -22,7 +22,7 @@ public class PlayerFileLocalDataSource {
 
     private Gson gson = new Gson();
 
-    private final Type type = new TypeToken<Employee>(){}.getType();
+    private final Type type = new TypeToken<Player>(){}.getType();
 
     public void savePlayer(Player player) {
         try {
@@ -38,13 +38,13 @@ public class PlayerFileLocalDataSource {
         }
     }
 
-    public Employee obtainEmployee(String employeeId) {
+    public Player obtainPlayer(String employeeId) {
         try {
             List<String> lines = Files.readAllLines(Paths.get(nameFile));
             for (String line: lines) {
-                Employee employee = gson.fromJson(line, Employee.class);
-                if (employee.employeeId.equals(employeeId)) {
-                    return employee;
+                Player player = gson.fromJson(line, Player.class);
+                if (player.employeeId.equals(employeeId)) {
+                    return player;
                 }
             }
         } catch (IOException e) {
@@ -53,13 +53,13 @@ public class PlayerFileLocalDataSource {
         return null;
     }
 
-    public ArrayList<Employee> obtainBuys() {
-        ArrayList<Employee> buys = new ArrayList<>();
+    public ArrayList<Player> obtainPlayers() {
+        ArrayList<Player> buys = new ArrayList<>();
         try {
             List<String> lines = Files.readAllLines(Paths.get(nameFile));
             for(String line : lines) {
-                Employee employee = gson.fromJson(line, Employee.class);
-                buys.add(employee);
+                Player player = gson.fromJson(line, Player.class);
+                buys.add(player);
             }
         } catch (IOException e) {
             System.out.println("Error al obtener compras");

@@ -44,3 +44,4 @@ bin/
 /.idea/.gitignore
 /.idea/gradle.xml
 /.idea/vcs.xml
+/.idea/uiDesigner.xml
